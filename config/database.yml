@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: :books_dev
+
+# test:
+#   <<: *default
+#   database: db/test.sqlite3
+
+production:
+  <<: *default
+  database: :books_prod
